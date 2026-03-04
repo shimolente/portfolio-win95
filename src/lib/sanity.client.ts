@@ -2,7 +2,7 @@ import { createClient } from '@sanity/client';
 import { createImageUrlBuilder } from '@sanity/image-url';
 import type { SanityImage } from './types';
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? '';
+const projectId = (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? '').trim();
 
 // Sanity project IDs are lowercase alphanumeric + dashes only.
 // If the env var is missing or still has the placeholder value, skip the client.

@@ -13,7 +13,7 @@ const VALID_PROJECT_ID = /^[a-z0-9][-a-z0-9]+$/;
 
 export default function StudioPage() {
   const [config, setConfig] = useState<Config | null>(null);
-  const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? '';
+  const projectId = (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? '').trim();
 
   useEffect(() => {
     if (!VALID_PROJECT_ID.test(projectId)) return;
