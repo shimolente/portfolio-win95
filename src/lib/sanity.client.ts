@@ -11,7 +11,7 @@ export const isSanityConfigured = /^[a-z0-9][-a-z0-9]+$/.test(projectId);
 export const client = isSanityConfigured
   ? createClient({
       projectId,
-      dataset: process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'production',
+      dataset: (process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'production').trim(),
       apiVersion: '2024-01-01',
       useCdn: process.env.NODE_ENV === 'production',
     })
