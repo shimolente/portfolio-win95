@@ -1,0 +1,62 @@
+.icon {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 80px;
+  cursor: default;
+  user-select: none;
+  padding: 4px;
+  outline: none;
+}
+
+/* ── Thumbnail ────────────────────────────────────────────────────────────── */
+.thumb {
+  width: 72px;
+  height: 54px;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+  image-rendering: auto;
+}
+
+.thumbPlaceholder {
+  width: 72px;
+  height: 54px;
+  background: var(--win-gray);
+  box-shadow: var(--shadow-raised);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 24px;
+}
+
+.icon.selected .thumb,
+.icon.selected .thumbPlaceholder {
+  outline: 1px dashed var(--win-white);
+  outline-offset: 1px;
+  filter: brightness(0.6) saturate(0) sepia(1) hue-rotate(180deg) saturate(5);
+}
+
+/* ── Label ────────────────────────────────────────────────────────────────── */
+.label {
+  font-family: var(--win-font);
+  font-size: var(--win-font-size);
+  color: var(--win-white);
+  text-shadow: 1px 1px 1px var(--win-black);
+  text-align: center;
+  line-height: 1.3;
+  word-break: break-word;
+  max-width: 76px;
+  padding: 1px 2px;
+}
+
+.icon.selected .label {
+  background: var(--win-selected-bg);
+  color: var(--win-selected-text);
+  text-shadow: none;
+  outline: 1px dotted var(--win-white);
+  outline-offset: -1px;
+}

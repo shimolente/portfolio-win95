@@ -1,0 +1,136 @@
+.window {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: var(--win-gray);
+  box-shadow: var(--shadow-raised);
+  overflow: hidden;
+}
+
+/* ── Title bar ────────────────────────────────────────────────────────────── */
+.titleBar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 3px 2px 4px;
+  background: linear-gradient(
+    to right,
+    var(--win-titlebar-active-start),
+    var(--win-titlebar-active-end)
+  );
+  cursor: move;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.window.inactive .titleBar {
+  background: var(--win-titlebar-inactive);
+}
+
+.titleIcon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.titleText {
+  font-family: var(--win-font);
+  font-size: var(--win-font-size);
+  font-weight: bold;
+  color: var(--win-white);
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* ── Control buttons ──────────────────────────────────────────────────────── */
+.controls {
+  display: flex;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.ctrlBtn {
+  width: 16px;
+  height: 14px;
+  background: var(--win-gray);
+  box-shadow: var(--shadow-raised);
+  border: none;
+  cursor: default;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--win-font);
+  font-size: 9px;
+  line-height: 1;
+  user-select: none;
+  padding: 0;
+}
+
+.ctrlBtn:active {
+  box-shadow: var(--shadow-sunken);
+}
+
+.ctrlClose {
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+
+/* ── Menu bar (optional decoration) ──────────────────────────────────────── */
+.menuBar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 1px 4px;
+  background: var(--win-gray);
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--win-dark-gray);
+}
+
+.menuItem {
+  padding: 2px 6px;
+  font-family: var(--win-font);
+  font-size: var(--win-font-size);
+  cursor: default;
+}
+
+.menuItem:hover {
+  background: var(--win-selected-bg);
+  color: var(--win-selected-text);
+}
+
+/* ── Content area ─────────────────────────────────────────────────────────── */
+.content {
+  flex: 1;
+  overflow: auto;
+  background: var(--win-white);
+  box-shadow: var(--shadow-sunken);
+  margin: 4px;
+  position: relative;
+}
+
+/* ── Status bar ───────────────────────────────────────────────────────────── */
+.statusBar {
+  display: flex;
+  align-items: center;
+  height: 18px;
+  padding: 1px 4px;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.statusItem {
+  flex: 1;
+  box-shadow: var(--shadow-sunken);
+  padding: 1px 4px;
+  font-family: var(--win-font);
+  font-size: var(--win-font-size);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

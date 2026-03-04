@@ -1,33 +1,60 @@
+/* ── Win95 font ──────────────────────────────────────────────────────────── */
+@font-face {
+  font-family: 'W95FA';
+  src: url('https://cdn.jsdelivr.net/npm/w95fa@1.0.8/w95fa.woff2') format('woff2');
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ── CSS custom properties (Win95 palette) ──────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --win-font: 'W95FA', 'MS Sans Serif', 'Pixelated MS Sans Serif', Arial, sans-serif;
+  --win-font-size: 11px;
+
+  --win-gray:      #c0c0c0;
+  --win-dark-gray: #808080;
+  --win-white:     #ffffff;
+  --win-black:     #000000;
+  --win-desktop:   #008080;
+
+  --win-titlebar-active-start: #000080;
+  --win-titlebar-active-end:   #1084d0;
+  --win-titlebar-inactive:     #808080;
+
+  --win-selected-bg:   #000080;
+  --win-selected-text: #ffffff;
+
+  --taskbar-height: 28px;
+
+  --shadow-raised:
+    inset -1px -1px #0a0a0a,
+    inset  1px  1px #dfdfdf,
+    inset -2px -2px #808080,
+    inset  2px  2px #ffffff;
+
+  --shadow-sunken:
+    inset -1px -1px #dfdfdf,
+    inset  1px  1px #0a0a0a,
+    inset -2px -2px #ffffff,
+    inset  2px  2px #808080;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
+/* ── Reset ───────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--win-font);
+  font-size: var(--win-font-size);
+  background: var(--win-desktop);
+  color: var(--win-black);
+  -webkit-font-smoothing: none;
 }
 
 a {
@@ -35,8 +62,103 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/* ── Shared Win95 button ─────────────────────────────────────────────────── */
+.win-btn {
+  background: var(--win-gray);
+  box-shadow: var(--shadow-raised);
+  border: none;
+  font-family: var(--win-font);
+  font-size: var(--win-font-size);
+  padding: 3px 10px;
+  cursor: default;
+  user-select: none;
+  white-space: nowrap;
+}
+.win-btn:active {
+  box-shadow: var(--shadow-sunken);
+  padding: 4px 9px 2px 11px;
+}
+
+/* ── Mobile fallback (shown < 768 px) ────────────────────────────────────── */
+.mobile-fallback {
+  display: none;
+  padding: 24px 16px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  color: #f0f0f0;
+  background: #111;
+  min-height: 100vh;
+}
+
+.mobile-fallback h1 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.mobile-fallback p {
+  color: #999;
+  margin-bottom: 24px;
+  font-size: 13px;
+}
+
+.mobile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 14px;
+}
+
+.mobile-card {
+  background: #1e1e1e;
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.mobile-card-thumb {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: #2a2a2a;
+  object-fit: cover;
+  display: block;
+}
+
+.mobile-card-thumb-placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: #2a2a2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.mobile-card-body {
+  padding: 10px 12px;
+}
+
+.mobile-card-title {
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.mobile-card-meta {
+  font-size: 11px;
+  color: #777;
+  text-transform: capitalize;
+}
+
+@media (max-width: 767px) {
+  html, body {
+    overflow: auto;
+  }
+  .desktop-root {
+    display: none !important;
+  }
+  .mobile-fallback {
+    display: block;
   }
 }

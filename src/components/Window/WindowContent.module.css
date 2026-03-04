@@ -1,0 +1,140 @@
+/* ── Website preview layout ──────────────────────────────────────────────── */
+.websiteLayout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: var(--win-font);
+  font-size: var(--win-font-size);
+}
+
+.previewArea {
+  flex: 1;
+  position: relative;
+  min-height: 0;
+}
+
+/* ── Description panel (shown under the preview) ─────────────────────────── */
+.descPanel {
+  flex-shrink: 0;
+  max-height: 160px;
+  overflow-y: auto;
+  background: var(--win-white);
+  border-top: 2px solid var(--win-dark-gray);
+  padding: 8px 10px;
+  font-family: var(--win-font);
+  font-size: var(--win-font-size);
+  line-height: 1.6;
+}
+
+.descPanel p {
+  margin-bottom: 6px;
+}
+
+.descPanel p:last-child {
+  margin-bottom: 0;
+}
+
+.descPanel h1, .descPanel h2, .descPanel h3 {
+  font-size: var(--win-font-size);
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+/* ── Action bar ───────────────────────────────────────────────────────────── */
+.websiteActions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  background: var(--win-gray);
+  border-top: 1px solid var(--win-dark-gray);
+  flex-shrink: 0;
+}
+
+.websiteActions a {
+  text-decoration: none;
+}
+
+/* ── General (non-website) layout ────────────────────────────────────────── */
+.generalLayout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+  font-family: var(--win-font);
+  font-size: var(--win-font-size);
+}
+
+.thumbnail {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.thumbnailPlaceholder {
+  width: 100%;
+  height: 160px;
+  background: var(--win-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  flex-shrink: 0;
+}
+
+.projectInfo {
+  padding: 10px 12px;
+  flex: 1;
+  overflow: auto;
+}
+
+.projectTitle {
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.projectMeta {
+  color: var(--win-dark-gray);
+  margin-bottom: 8px;
+  text-transform: capitalize;
+}
+
+.projectDesc {
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+.projectDesc:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Address bar ──────────────────────────────────────────────────────────── */
+.addressBar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 6px;
+  background: var(--win-gray);
+  border-bottom: 1px solid var(--win-dark-gray);
+  flex-shrink: 0;
+}
+
+.addressLabel {
+  flex-shrink: 0;
+}
+
+.addressInput {
+  flex: 1;
+  font-family: var(--win-font);
+  font-size: var(--win-font-size);
+  padding: 1px 4px;
+  box-shadow: var(--shadow-sunken);
+  background: var(--win-white);
+  border: none;
+  outline: none;
+  color: var(--win-black);
+}

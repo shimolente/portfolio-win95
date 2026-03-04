@@ -9,9 +9,18 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "next": "16.1.6",
+    "@sanity/client": "^7.16.0",
+    "@sanity/image-url": "^2.0.3",
+    "framer-motion": "^12.35.0",
+    "next": "^16.1.6",
+    "next-sanity": "^12.1.0",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "react-draggable": "^4.5.0",
+    "react-rnd": "^10.5.2",
+    "sanity": "^5.13.0",
+    "sanity-plugin-media": "^4.1.1",
+    "zustand": "^5.0.11"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -19,6 +28,6 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
-    "typescript": "^5"
+    "typescript": "^5.9.3"
   }
 }

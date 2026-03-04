@@ -1,0 +1,99 @@
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--taskbar-height);
+  background: var(--win-gray);
+  box-shadow: inset 0 1px #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 4px;
+  z-index: 9999;
+}
+
+/* ── Start button ─────────────────────────────────────────────────────────── */
+.startBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  font-family: var(--win-font);
+  font-size: var(--win-font-size);
+  font-weight: bold;
+  background: var(--win-gray);
+  box-shadow: var(--shadow-raised);
+  border: none;
+  cursor: default;
+  user-select: none;
+  height: 22px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.startBtn:active {
+  box-shadow: var(--shadow-sunken);
+}
+
+.startLogo {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* ── Divider ──────────────────────────────────────────────────────────────── */
+.divider {
+  width: 2px;
+  height: 20px;
+  box-shadow: inset -1px 0 #ffffff, inset 1px 0 #808080;
+  flex-shrink: 0;
+  margin: 0 2px;
+}
+
+/* ── Running apps area ────────────────────────────────────────────────────── */
+.apps {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.appBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 6px;
+  font-family: var(--win-font);
+  font-size: var(--win-font-size);
+  background: var(--win-gray);
+  box-shadow: var(--shadow-raised);
+  border: none;
+  cursor: default;
+  user-select: none;
+  height: 20px;
+  max-width: 160px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.appBtn:active,
+.appBtnActive {
+  box-shadow: var(--shadow-sunken);
+}
+
+/* ── System tray (clock) ──────────────────────────────────────────────────── */
+.tray {
+  display: flex;
+  align-items: center;
+  padding: 2px 6px;
+  height: 22px;
+  box-shadow: var(--shadow-sunken);
+  font-family: var(--win-font);
+  font-size: var(--win-font-size);
+  flex-shrink: 0;
+  min-width: 60px;
+  justify-content: center;
+}

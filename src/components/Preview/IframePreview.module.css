@@ -1,0 +1,70 @@
+.root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--win-white);
+  overflow: hidden;
+}
+
+.iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--win-gray);
+  font-family: var(--win-font);
+  font-size: var(--win-font-size);
+  padding: 16px;
+  text-align: center;
+}
+
+.fallbackThumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  opacity: 0.7;
+}
+
+.fallbackOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(192, 192, 192, 0.85);
+  font-family: var(--win-font);
+  font-size: var(--win-font-size);
+  padding: 16px;
+}
+
+.fallbackMsg {
+  font-size: 11px;
+  color: var(--win-dark-gray);
+  max-width: 240px;
+}
+
+.loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--win-gray);
+  font-family: var(--win-font);
+  font-size: var(--win-font-size);
+  color: var(--win-dark-gray);
+}

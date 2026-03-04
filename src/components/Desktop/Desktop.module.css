@@ -1,0 +1,23 @@
+.desktop {
+  position: fixed;
+  inset: 0;
+  bottom: var(--taskbar-height);
+  background-color: var(--win-desktop);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  cursor: default;
+  user-select: none;
+}
+
+/* The layer where windows live — same size as desktop, positioned */
+.windowLayer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none; /* children handle their own events */
+}
+
+.windowLayer > * {
+  pointer-events: auto;
+}
